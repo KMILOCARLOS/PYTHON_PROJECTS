@@ -14,7 +14,8 @@ def menu():
     print("2. Buscar casilla")
     print("3. Mostrar lista inversa")
     print("4  Eliminar nodos con un mismo valor")
-    print("5  Funciones especiales")
+    print("5  Mostrar el numero mayor de la lista")
+    print("6  Funciones especiales")
     print("0. Salir")
     print("="*30)
 
@@ -55,20 +56,27 @@ def ejecutar():
             print("\n")
         elif des == 5:
             print()
+            numeros.encontrar_valor_mayor()
+            print("\n")
+        elif des == 6:
+            print()
 
             while True:
                 menuFuncEsp()
                 des = int(input("-> "))
 
                 if des == 1:
-                    print
-                if des == 2:
-                    print
-                if des == 3:
-                    print
-                if des == 4:
-                    print
-                if des == 0:
+                    num = int(input("Ingrese un numero para agregar en la lista -> "))
+                    numeros.push_nodo(num)
+                    print("\n")
+                elif des == 2:
+                    numeros.pop_nodo()
+                    print("\n")
+                elif des == 3:
+                    print("\n")
+                elif des == 4:
+                    print("\n")
+                elif des == 0:
                     break
                 else:
                     print("\nDato no valido\n")
