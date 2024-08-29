@@ -45,9 +45,14 @@ class lista:
         actual.num = nuevo_num
         print(f"El nodo con numero {tem} ha sido modificado a {actual.num}.\n\n")
 
-    #aqui
-
-
+    def encontrar_valor_mayor(self):
+        mayor = 0
+        actual = self.cabeza
+        while actual:
+            if actual.num > mayor:
+                mayor = actual.num
+            actual = actual.siguiente
+        print(f"El valor mas alto de la lista es {mayor}")
 
     def eliminar_lista_mismos_valores(self, valor):
         actual = self.cabeza
@@ -86,3 +91,28 @@ class lista:
             actual = actual.siguiente
             cont += 1
         print(f"No se encontró ningún nodo en la posición {num}")
+
+
+
+    #Funciones especiales
+    
+    def push_nodo(self, num):
+        nodo_nuevo = node(num)
+        if not self.cabeza:
+            self.cabeza = nodo_nuevo
+        else:
+            actual = self.cabeza
+            while actual.siguiente:
+                actual = actual.siguiente
+            actual.siguiente = nodo_nuevo
+        print("Se ha realizado el push correctamente")
+
+    def pop_nodo(self):
+        actual = self.cabeza
+        previo = None
+        while actual:
+            if actual.siguiente == None:
+                previo.siguiente = None
+            previo = actual
+            actual = actual.siguiente
+        print("Se ha realizado el pop correctamente")
